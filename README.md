@@ -45,7 +45,7 @@ cd customer-churn-mlops
 
 ### ⚡ Step 2: Choose Your Execution Method
 ##### ✅ Option A: Using Docker (Recommended - 1 Click Setup)
-Ensure Docker Desktop is running, then execute:
+> Ensure Docker Desktop is running, then execute:
 
 ```bash
 docker-compose up --build
