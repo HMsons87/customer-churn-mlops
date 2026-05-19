@@ -22,7 +22,6 @@ By translating raw telecommunications data into actionable intelligence, this sy
 ---
 
 ## ⚙️ Local Setup Guide (For Developers)
-> ده الدليل اللي بيشرح لأي مبرمج إزاي ينزل المشروع ويشغله على جهازه خطوة بخطوة
 
 This project is containerized for seamless execution across different environments.  
 You can run it using **Docker (Recommended)** or standard **Python virtual environments**.
@@ -34,7 +33,44 @@ You can run it using **Docker (Recommended)** or standard **Python virtual envir
 
 ---
 
+
+
 ### 📥 Step 1: Clone the Repository
 ```bash
 git clone https://github.com/YOUR_USERNAME/customer-churn-mlops.git
 cd customer-churn-mlops
+```
+
+---
+
+### ⚡ Step 2: Choose Your Execution Method
+##### ✅ Option A: Using Docker (Recommended - 1 Click Setup)
+Ensure Docker Desktop is running, then execute:
+
+```bash
+docker-compose up --build
+```
+
+- API available at: http://localhost:8000
+- Dashboard available at: http://localhost:8501
+
+##### 🌀 Option B: Using Python Virtual Environment (Lightweight)
+> If you prefer not to use Docker, run the microservices manually using two separate terminals.
+
+#### Terminal 1 (Backend API):
+```bash
+python -m venv venv
+source venv/bin/activate   # On Linux/Mac
+venv\Scripts\activate      # On Windows
+pip install -r requirements.txt
+python -m uvicorn api.main:app --reload
+```
+#### Terminal 2 (Frontend Dashboard):
+```bash
+source venv/bin/activate   # On Linux/Mac
+venv\Scripts\activate      # On Windows
+python -m streamlit run dashboard/app.py
+```
+- Access the Dashboard at: http://localhost:8501
+
+---
