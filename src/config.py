@@ -5,15 +5,8 @@ from pathlib import Path
 # PROJECT ROOT
 # ================================
 
-# Gets the absolute path of your project root folder
-# Example: C:/Users/Hassan/customer-churn-mlops
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-# ================================
-# ENSURE DIRECTORIES EXIST (التعديل الجديد)
-# ================================
-# هذا الجزء يضمن إنشاء المجلدات لو لم تكن موجودة لمنع أي أخطاء لاحقاً
 
 DIRS_TO_CREATE = [
     BASE_DIR / "data" / "raw",
@@ -82,3 +75,23 @@ TARGET_COLUMN = "Churn"
 # ================================
 
 RANDOM_STATE = 42
+
+# ================================
+# EVALUATION REPORT PATHS
+# ================================
+
+CLASSIFICATION_REPORT_PATH = (
+    BASE_DIR / "reports" / "classification_report.txt"
+)
+
+CONFUSION_MATRIX_PATH = (
+    BASE_DIR / "reports" / "confusion_matrix.png"
+)
+
+ROC_CURVE_PATH = (
+    BASE_DIR / "reports" / "roc_curve.png"
+)
+
+FEATURE_IMPORTANCE_PATH = (
+    BASE_DIR / "reports" / "feature_importance.png"
+)
